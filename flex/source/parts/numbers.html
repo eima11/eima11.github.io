@@ -1,0 +1,55 @@
+<!-- YOUR NUMBERS: salary calculator (Launch) / week audit (Scale) -->
+<section class="sec alt" id="numbers" aria-labelledby="numH">
+  <div class="wrap">
+    <div class="head">
+      <div><p class="eyebrow">Run your numbers</p>
+        <h2 id="numH" data-show="launch">How many units replace your salary?</h2>
+        <h2 data-show="scale">Where does your week go?</h2></div>
+      <div class="tabs" role="tablist" aria-label="Programme" style="margin-top:0">
+        <button type="button" role="tab" data-path-btn="launch" aria-selected="true">I'm starting out</button>
+        <button type="button" role="tab" data-path-btn="scale" aria-selected="false">I run units</button>
+      </div>
+    </div>
+
+    <div class="nums" data-show="launch">
+      <div class="nctl">
+        <label class="nrow"><span class="nlab">Your monthly take-home <output id="sOut"></output></span><input type="range" id="sSal" min="1500" max="8000" step="100" value="3200"></label>
+        <div class="nrow"><span class="nlab" id="mkL">Market</span><div class="chips" role="radiogroup" aria-labelledby="mkL" data-calc="market">
+          <button class="chip" type="button" role="radio" aria-checked="false" data-v="capital">Capital city</button><button class="chip" type="button" role="radio" aria-checked="true" data-v="regional">Regional city</button><button class="chip" type="button" role="radio" aria-checked="false" data-v="holiday">Holiday town</button></div></div>
+        <div class="nrow"><span class="nlab" id="utL">Unit</span><div class="chips" role="radiogroup" aria-labelledby="utL" data-calc="unit">
+          <button class="chip" type="button" role="radio" aria-checked="false" data-v="studio">Studio</button><button class="chip" type="button" role="radio" aria-checked="true" data-v="one">1-bed</button><button class="chip" type="button" role="radio" aria-checked="false" data-v="two">2-bed</button></div></div>
+        <div class="nrow"><span class="nlab" id="moL">Model</span><div class="chips" role="radiogroup" aria-labelledby="moL" data-calc="model">
+          <button class="chip" type="button" role="radio" aria-checked="true" data-v="r2r">Rent-to-rent</button><button class="chip" type="button" role="radio" aria-checked="false" data-v="manage">Manage for owners</button></div></div>
+        <p class="nnote">Example assumptions, not a forecast. The webinar walks through real numbers for your city.</p>
+      </div>
+      <div class="nres">
+        <p class="eyebrow">You'd need</p>
+        <div class="big"><b id="uNeed">4</b><span id="uWord">units</span></div>
+        <p class="nsub" id="uSub">to replace your take-home pay</p>
+        <div class="houses" id="houses" aria-hidden="true"></div>
+        <dl class="nkv">
+          <div><dt>Profit per unit</dt><dd id="kProfit">—</dd></div>
+          <div><dt>Break-even occupancy</dt><dd id="kBe">—</dd></div>
+          <div><dt>At one new unit every 8 weeks</dt><dd id="kTime">—</dd></div>
+        </dl>
+        <button class="btn btn-launch" type="button" data-open="webinar">See how to open unit 1 <svg class="i"><use href="#i-arrow"/></svg></button>
+      </div>
+    </div>
+
+    <div class="nums" data-show="scale">
+      <div class="nctl" id="weekCtl"></div>
+      <div class="nres">
+        <p class="eyebrow">Hours you'd get back</p>
+        <div class="big"><b id="hBack">14</b><span>hours a week</span></div>
+        <p class="nsub" id="hSub">—</p>
+        <div class="wbars" aria-hidden="true">
+          <div><span>Today</span><div class="wb"><i id="wbNow"></i></div><em id="wbNowT"></em></div>
+          <div><span>With Base360 + SOPs</span><div class="wb"><i id="wbThen"></i></div><em id="wbThenT"></em></div>
+        </div>
+        <p class="nnote" style="color:inherit;opacity:.7">Estimates based on which tasks Base360 and The Flex SOPs automate.</p>
+        <button class="btn btn-scale" type="button" id="weekCta">Bring these numbers to a free call <svg class="i"><use href="#i-arrow"/></svg></button>
+      </div>
+    </div>
+  </div>
+</section>
+

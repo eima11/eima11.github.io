@@ -1,0 +1,10 @@
+/* ===== Theme switch ===== */
+.theme-btn{position:relative; width:38px; height:38px; flex:none; border:0; border-radius:999px; display:grid; place-items:center; overflow:hidden; color:var(--ink); background:rgba(255,255,255,.45); box-shadow:var(--lg-rim), 0 0 0 .5px rgba(12,28,36,.14); transition:background-color .2s, transform .15s}
+.theme-btn:hover{background:rgba(255,255,255,.75)}
+.theme-btn:active{transform:scale(.92)}
+.theme-btn svg{position:absolute; width:18px; height:18px; transition:transform .55s cubic-bezier(.34,1.56,.64,1), opacity .3s}
+.theme-btn .ic-sun{opacity:0; transform:rotate(-90deg) scale(.4)}
+html.is-dark .theme-btn .ic-sun{opacity:1; transform:none}
+html.is-dark .theme-btn .ic-moon{opacity:0; transform:rotate(90deg) scale(.4)}
+html.is-dark .theme-btn:hover{background:rgba(255,255,255,.14)}
+::view-transition-old(root), ::view-transition-new(root){animation:none; mix-blend-mode:normal}

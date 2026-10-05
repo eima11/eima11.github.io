@@ -1,0 +1,10 @@
+color-scheme:dark;
+--cream:#0B1417; --sand:#101C20; --sand-2:#17262B; --white:#142226;
+--ink:#E7EEEC; --ink-2:#C1CDCA; --gray:#8D9E9B; --line:#22343A; --line-2:#2F454C;
+--brand-ink:#7FCFC4; --brand-soft:#123239; --on-ink:#0B1417;
+--launch-soft:#3A2E12; --launch-text:#F4C76A;
+--scale:#13707F; --scale-deep:#0F5D6A; --scale-soft:#123239; --scale-text:#7FCFC4;
+--lg-light:radial-gradient(120% 170% at 8% -45%, rgba(255,255,255,.12), rgba(255,255,255,0) 46%), linear-gradient(135deg, rgba(26,44,50,.72), rgba(14,26,30,.55));
+--lg-rim:inset 0 1px 0 rgba(255,255,255,.16), inset 0 0 0 1px rgba(255,255,255,.08);
+--lg-drop:0 0 0 .5px rgba(0,0,0,.4), 0 14px 34px -16px rgba(0,0,0,.6);
+--sh-card:0 8px 20px -8px rgba(0,0,0,.5); --sh-float:0 24px 48px -18px rgba(0,0,0,.65);
