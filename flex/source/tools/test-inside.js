@@ -1,0 +1,14 @@
+const p=require('puppeteer-core');const W=ms=>new Promise(r=>setTimeout(r,ms));
+(async()=>{const b=await p.launch({executablePath:'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',headless:'new'});
+const pg=await b.newPage();await pg.setViewport({width:1440,height:900});const errs=[];pg.on('pageerror',e=>errs.push(e.message));
+await pg.goto('http://localhost:8642/v2-academy/index.html',{waitUntil:'networkidle0'});
+const st=()=>pg.evaluate(()=>{const a=document.querySelector('.steps[data-show="launch"] button[aria-selected="true"]');return `${a.textContent.trim()} | plan ${document.getElementById('planPct').textContent} | occ ${document.getElementById('oOcc').textContent} | profit ${document.getElementById('rProfit').textContent}`});
+console.log('before scroll   ',await st());await W(5000);console.log('5s, not in view ',await st());
+await pg.evaluate(()=>document.getElementById('inside').scrollIntoView({block:'center'}));
+await W(2200);console.log('in view +2.2s   ',await st());await pg.screenshot({path:process.argv[2]+'/in1.png'});
+await W(3000);console.log('in view +5.2s   ',await st());await W(2600);console.log('in view +7.8s   ',await st());await pg.screenshot({path:process.argv[2]+'/in2.png'});
+await W(2000);console.log('in view +9.8s   ',await st());
+const box=await (await pg.$('.win')).boundingBox();await pg.mouse.move(box.x+200,box.y+200);
+const s1=await st();await W(6000);console.log('hover 6s same?  ',s1===(await st()));
+await pg.mouse.move(5,5);await W(4800);console.log('left +4.8s      ',await st());
+console.log('errors:',errs.length?errs:'none');await b.close()})();
